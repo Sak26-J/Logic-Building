@@ -2,10 +2,11 @@
     iRow = 4
     iCol = 4
 
-    1*   2#   3*   4#
-    5*   6#   7*   8#
-    9*   10#   11*   12#
-    13*   14#   15*   16#
+    $   *   *   *
+    *   $   *   *
+    *   *   $   *
+    *   *   *   $
+
 */
 
 #include<stdio.h>
@@ -14,14 +15,20 @@ void Display(int iRow, int iCol)
 {
     int i = 0, j = 0;
     
+    if(iRow != iCol)        // Filter
+    {
+        printf("Number of rows and number of columns should be same\n");
+        return;
+    }
+
     //    1        2       3    
     for(i = 1; i <= iRow; i++)  // Outer
     {   //    1         2      3 
         for(j = 1; j <= iCol; j++)  // Inner
         {
-            if((j % 2) == 0)
+            if(i == j)
             {
-                printf("#\t");
+                printf("$\t");
             }
             else
             {

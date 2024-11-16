@@ -2,10 +2,11 @@
     iRow = 4
     iCol = 4
 
-    1*   2#   3*   4#
-    5*   6#   7*   8#
-    9*   10#   11*   12#
-    13*   14#   15*   16#
+    $   *   *   *
+    *   $   *   *
+    *   *   $   *
+    *   *   *   $
+
 */
 
 #include<stdio.h>
@@ -19,9 +20,9 @@ void Display(int iRow, int iCol)
     {   //    1         2      3 
         for(j = 1; j <= iCol; j++)  // Inner
         {
-            if((j % 2) == 0)
+            if(i == j)
             {
-                printf("#\t");
+                printf("$\t");
             }
             else
             {
